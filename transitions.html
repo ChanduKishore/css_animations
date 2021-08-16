@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>text</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+
+	*{box-sizing: border-box;}
+		main{width: 90%;margin: 0 auto;height: 300vh}
+		div{text-align: center;}
+		.empty{height: 800px;display: flex;align-items: center;justify-content: center;font-size: 5em;}
+
+		.grid{display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap:10px ;}
+
+			.card{display: flex;align-items: center;justify-content: center;}
+
+		p{border: 5px solid red;
+			opacity: 0;position: relative;height: 90%;padding: 10px;width: 90%;transition-property: width,height;
+			transition-duration: 0.2s;}
+
+			.fadein{animation-name: fadein;
+			animation-duration: 1.5s;
+			opacity: 1; top: 0}
+
+			.card:hover p{width:100%;height: 100%}
+
+
+			@keyframes fadein{
+				from{opacity: 0;top: 80px}
+				to{opacity: 1;top: 0}
+			}
+
+	</style>
+
+</head>
+<body>
+	<button class="left"><a href="animations_2.html">ᐊ</a></button>
+	<main>
+
+	<div class="empty">
+		<div><div>Scroll down</div>
+		<div>slowly</div></div>
+	</div>
+	<div class="grid">
+	<div class="card">
+	<p>lorem greham meets angela need to attend a meeting can anyone make chocolate cakes with vennela toppings </p>
+</div>
+<div class="card">
+	<p>lorem greham meets angela need to attend a meeting can anyone make chocolate cakes with vennela toppings </p>
+</div>
+<div class="card">
+	<p>lorem greham meets angela need to attend a meeting can anyone make chocolate cakes with vennela toppings </p>
+</div>
+<div class="card">
+	<p>lorem greham meets angela need to attend a meeting can anyone make chocolate cakes with vennela toppings </p>
+</div>
+<div class="card">
+	<p>lorem greham meets angela need to attend a meeting can anyone make chocolate cakes with vennela toppings </p>
+</div>
+<div class="card">
+	<p>lorem greham meets angela need to attend a meeting can anyone make chocolate cakes with vennela toppings </p>
+</div>
+<div class="card">
+	<p>lorem greham meets angela need to attend a meeting can anyone make chocolate cakes with vennela toppings </p>
+</div>
+
+<div class="card">
+	<p>lorem greham meets angela need to attend a meeting can anyone make chocolate cakes with vennela toppings </p>
+</div>
+<div class="card">
+	<p>lorem greham meets angela need to attend a meeting can anyone make chocolate cakes with vennela toppings </p>
+</div>
+</div>
+</main>
+</body>
+<script type="text/javascript">
+	
+	let targets = document.querySelectorAll('p');
+	let display = document.querySelector('h2')
+
+
+	function isInViewPort(){
+
+		targets.forEach((target) =>{
+			let rect = target.getBoundingClientRect();
+		
+		let visible = (rect.top <=0 && rect.bottom >=0)|| (rect.top < window.innerHeight) && rect.bottom >= (window.innerHeight)||
+    (rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight));
+
+	if (visible){
+		target.classList.add('fadein')}
+
+			});
+	}
+
+	const change_postion=setInterval(isInViewPort,1000/60)
+
+
+</script>
+
+</html>

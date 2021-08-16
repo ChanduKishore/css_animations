@@ -1,0 +1,5 @@
+button{position: fixed;top: 50%;right: 10px;padding: 10px 30px;font-size: 2em;border: none;background: none;}
+a{text-decoration: none;}
+
+.left{left: -15px;}
+.right{right: -15px}
